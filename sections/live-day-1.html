@@ -1,0 +1,99 @@
+{% extends "templates/base.html" %}
+{% set mastheadimage="/devsummit/static/images/masthead/collage-masthead-blurred" %}
+{% set mastheadimagetitle="A blurred collage of photos from Chrome Dev Summit 2015." %}
+{% set pagestyles="static/styles/live.css" %}
+{% set section="Live" %}
+{% set youtubeId="aWGU4qLtHEw" %}
+{% set video_name="Chrome Dev Summit Live Stream" %}
+{% set has_divider=True %}
+{% set current_session=(sessions | get_current_session) %}
+{% set next_session=(sessions | get_next_session) %}
+{% set upcoming_sessions=(sessions | get_upcoming_sessions) %}
+
+{% block content %}
+  <section class="live-info">
+    {% if is_partial %}
+      <div class="live-info__item live-info__item-current js-live-info-current" aria-hidden="true">
+        <h2 class="live-info__section"></h2>
+        <h3 class="live-info__title"></h3>
+        <p class="live-info__description"></p>
+      </div>
+
+      <div class="live-info__item live-info__item-next js-live-info-next" aria-hidden="true">
+        <h2 class="live-info__section"></h2>
+        <h3 class="live-info__title"></h3>
+        <h4 class="live-info__time"></h4>
+        <p class="live-info__description"></p>
+      </div>
+    {% else %}
+      <div class="live-info__item live-info__item-current js-live-info-current"{% if not current_session %} aria-hidden="true"{% endif %}>
+        <h2 class="live-info__section">
+            {% if current_session %}
+              Live Now
+            {% endif %}
+        </h2>
+        <h3 class="live-info__title">
+            {% if current_session and current_session.speaker %}
+              {{ current_session.speaker }}:
+            {% endif %}
+            {{ current_session.name }}
+        </h3>
+        <p class="live-info__description">
+          {{ current_session.description }}
+        </p>
+      </div>
+
+      <div class="live-info__item live-info__item-next js-live-info-next"{% if not next_session %} aria-hidden="true"{% endif %}>
+        <h2 class="live-info__section">
+            {% if next_session and next_session["details"].name %}
+              Up Next...
+            {% endif %}
+        </h2>
+        <h3 class="live-info__title">
+            {% if next_session and next_session["details"].speaker %}
+              {{ next_session["details"].speaker }}:
+            {% endif %}
+
+            {% if next_session %}
+              {{ next_session["details"].name }}
+            {% endif %}
+        </h3>
+        <h4 class="live-info__time">
+          {% if next_session and next_session["datetime"] %}
+            {{ next_session["datetime"].strftime('%H%M') }}
+          {% endif %}
+        </h4>
+        <p class="live-info__description">
+          {% if next_session %}
+            {{ next_session["details"].description }}
+          {% endif %}
+        </p>
+      </div>
+    {% endif %}
+  </section>
+
+  <section class="live-coming-up{% if not upcoming_sessions%} live-coming-up--empty{% endif %}"
+    {% if not upcoming_sessions%} aria-hidden="true"{% endif %}>
+
+    <h2 class="live-coming-up__title">Coming up</h2>
+
+    <ol class="live-coming-up__list">
+      {% for upcoming_session in upcoming_sessions %}
+      <li class="live-coming-up__item">
+        <time class="live-coming-up__item-time" datetime="{{ upcoming_session["datetime"].strftime('%Y-%m-%dT%H:%M:%S-08:00') }}">{{ upcoming_session["datetime"].strftime('%H%M') }}</time>
+        <a class="live-coming-up__item-description">
+          <h3 class="live-coming-up__item-title">{{ upcoming_session["details"].name }}</h3>
+          {% if upcoming_session["details"].speaker %}
+          <p class="live-coming-up__item-author">{{ upcoming_session["details"].speaker }}</p>
+          {% endif %}
+        </a>
+      </li>
+      {% endfor %}
+    </ol>
+
+    <div class="schedule-adjustment" aria-hidden="true">
+      Please note: all times are in <span class="schedule-adjustment__value">PST</span>. <button class="toggle-localized-times">Adjust to PST</button>
+    </div>
+
+  </section>
+{% endblock %}

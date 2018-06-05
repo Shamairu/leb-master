@@ -1,0 +1,41 @@
+{% from "templates/includes/head.partial.html" import head %}
+{% from "templates/includes/masthead.partial.html" import masthead %}
+
+{% if is_live and youtubeId %}
+  {% set is_live=False %}
+{% endif %}
+
+{% if youtubeId %}
+  {% set mastheadexpanded=True %}
+{% endif %}
+
+{% call head(is_partial, pagestyles, section, inline_styles, is_live, base_url, url) %}{% endcall %}
+
+{% call masthead(is_partial,
+    mastheadimage,
+    mastheadtitle,
+    mastheadimagetitle,
+    mastheadexpanded,
+    youtubeId,
+    autoplay,
+    video_name,
+    is_live,
+    has_divider) %}
+  {{ mastheadinfo }}
+{% endcall %}
+
+<!-- Site version: {{ version }} -->
+<section tabindex="-1" class="page-content section-{{ section | convert_to_class }}">
+{% block content %}{% endblock %}
+</section>
+
+{% if debug %}
+<section class="debug">
+  <p>Debug push messages:</p>
+  <button data-id="debug" class="notification-btn js-notification-btn" hidden disabled>
+    <div class="notification-btn__inner">Getting status...</div>
+  </button>
+</section>
+{% endif %}
+
+{% include "templates/includes/footer.partial.html" %}

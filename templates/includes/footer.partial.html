@@ -1,0 +1,109 @@
+  <footer class="footer">
+    <div class="footer__content" role="presentation">
+      <p>&copy; Google 2016</p>
+      <p>
+        <a target="_blank" rel="noopener" href="http://www.google.com/intl/en/policies/privacy/">Privacy</a> &amp;
+        <a target="_blank" rel="noopener" href="http://www.google.com/intl/en/policies/terms/">Terms</a>
+      </p>
+      <p>
+        <a href="/devsummit/code-of-conduct">Code of Conduct</a>
+      </p>
+    </div>
+    <svg width="100%" height="100%" preserveAspectRatio="none" viewBox="0 0 1224 302">
+      <polygon x="0" y="0" fill="#F0F0F0" points="0 20 1224 0 1224 302 0 302"></polygon>
+      <polygon x="0" y="0" fill="#6387F5" points="0 226 1224 194 1224 302 0 302"></polygon>
+    </svg>
+  </footer>
+
+  <template id="tmpl-notification-area">
+    <section class="notification-area">
+      <div class="notification-ripple"></div>
+      <div class="notification-content">
+        <div class="notification-content__header">
+          <button class="notification-toggle-button" title="Toggle Notification Settings"></button>
+          <div class="notification-content__headline" inert>
+            <h1 class="notification-content__title" tabindex="-1">Notification Settings</h1>
+            <p class="notification-content__description">These are the sessions you want to be notified about. You can change these at any time.</p>
+            <button class="notification-close-button" title="Close Notification Settings"></button>
+          </div>
+        </div>
+
+        <ul class="notification-content__list" title="Your notifications" tabindex="-1">
+        </ul>
+        <div class="notification-content__remove-all-container">
+          <button class="notification-content__remove-all">Unsubscribe from all notifications</button>
+        </div>
+      </div>
+
+    </section>
+  </template>
+
+  <template id="tmpl-notification-item">
+    <li class="notification-content__list-item">
+      <button data-id="" class="notification-item__details" title="">
+        <div class="notification-item__details-inner">
+          <div class="notification-item__breakdown">
+            <span class="notification-item__breakdown-title"></span>
+            <span class="notification-item__breakdown-datetime">
+              <span class="notification-item__breakdown-day"></span>
+              <time class="notification-item__breakdown-time"></time>
+            </span>
+          </div>
+        </div>
+      </button>
+    </li>
+  </template>
+
+  <script>
+    (function() {
+
+      function addPageStyles () {
+        var existingSheet = document.querySelector(
+          'link[href="{{ "/devsummit/static/styles/cds.css" | add_hash }}"]')
+        if (existingSheet) {
+          return;
+        }
+        var link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.href = '{{ "/devsummit/static/styles/cds.css" | add_hash }}';
+        document.head.appendChild(link);
+      }
+
+      function addBootstrap () {
+        var bootstrap = document.createElement('script');
+        bootstrap.src = "{{ '/devsummit/static/scripts/bootstrap.js' | add_hash }}";
+        document.head.appendChild(bootstrap);
+      }
+
+      // Do a cut-the-mustard test for Intl. If it fails, then just drop in the
+      // page styles. If it passes add the bootstrap, which will inject the
+      // styles itself.
+      if (!('Intl' in window)) {
+        return addPageStyles();
+      }
+
+      addBootstrap();
+    })();
+  </script>
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-41980257-1', 'auto');
+    ga('send', 'pageview');
+
+    var google_conversion_id = 935743779;
+    var google_custom_params = window.google_tag_params;
+    var google_remarketing_only = true;
+  </script>
+
+  <noscript>
+    <div style="display:inline;">
+      <img height="1" width="1" style="border-style:none;" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/935743779/?guid=ON&amp;script=0"/>
+    </div>
+  </noscript>
+
+</body>
+</html>

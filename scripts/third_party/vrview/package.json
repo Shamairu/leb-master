@@ -1,0 +1,40 @@
+{
+  "name": "vrview",
+  "version": "2.0.0-beta.1",
+  "description": "Embed VR content into your webpage.",
+  "main": "index.js",
+  "//": "TODO: Re-add dependencies once vanilla versions can be used again.",
+  "dependencies": {
+    "browserify": "^13.1.1",
+    "derequire": "^2.0.3",
+    "es6-promise": "^3.0.2",
+    "eventemitter3": "^1.2.0",
+    "rollup": "^0.36.3",
+    "shaka-player": "^2.0.0",
+    "three": "^0.80.1",
+    "tween.js": "^16.3.4",
+    "uglifyjs": "^2.4.10",
+    "webvr-boilerplate": "^0.4.6",
+    "webvr-polyfill": "^0.9.18"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "build": "browserify src/embed/main.js | derequire | uglifyjs -c > build/embed.min.js && npm run build-three-closure",
+    "build-api": "browserify --standalone VRView src/api/main.js | derequire | uglifyjs -c > build/vrview.min.js",
+    "build-analytics": "browserify src/embed/with-analytics.js | derequire | uglifyjs -c > build/embed-analytics.min.js && npm run build-three-closure",
+    "watch-embed": "watchify src/embed/main.js -v -d -o build/embed.js",
+    "watch-api": "watchify --standalone VRView src/api/main.js -v -d -o build/vrview.js",
+    "build-three-closure": "rollup -c src/third_party/three/rollup.config.js && java -jar src/third_party/three/closure-compiler-v20160713.jar --warning_level=VERBOSE --jscomp_off=globalThis --jscomp_off=checkTypes --externs src/third_party/three/externs.js --language_in=ECMASCRIPT5_STRICT --js build/three.js --js_output_file build/three.min.js",
+    "build-dms": "uglifyjs scripts/js/device-motion-sender.js > build/device-motion-sender.min.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/google/vrview.git"
+  },
+  "author": "",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/google/vrview/issues"
+  },
+  "homepage": "https://github.com/google/vrview#readme"
+}

@@ -1,0 +1,38 @@
+button.vr {
+  position: absolute;
+  bottom: calc(8px + 13%);
+  right: 8px;
+  border: 0;
+  width: 48px;
+  height: 48px;
+  // border-radius: 50%;
+  background-color: transparent;
+  background-image: url('/devsummit/static/images/icons/cardboard.svg');
+  background-size: 50% 50%;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  transition: opacity 0.3s cubic-bezier(0, 0, 0.31, 1);
+  opacity: 1;
+  cursor: pointer;
+
+  &.hide {
+    opacity: 0;
+  }
+}
+
+.masthead__vr {
+  background-color: white;
+  opacity: 1;
+  transition: opacity 0.3s cubic-bezier(0, 0, 0.31, 1);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100% !important;
+  height: 102%;
+  z-index: 5;
+  .hide-areas & {
+    opacity: 0;
+  }
+}
+
+

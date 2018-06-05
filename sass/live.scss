@@ -1,0 +1,245 @@
+/*!
+ *
+ * Copyright 2016 Google Inc. All rights reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+@import 'common/_variables';
+
+.live-info {
+  position: relative;
+  padding: $baseline;
+  margin: 0 auto;
+  max-width: $baseline * 108;
+  min-height: $baseline * 68;
+}
+
+.live-info__item {
+  margin-bottom: $baseline * 3;
+}
+
+.live-info__section {
+  font-family: 'Roboto', Arial, Helvetica, sans-serif;
+  font-weight: 700;
+  margin: 0;
+  padding: $baseline 0;
+  font-size: 18px;
+  color: #544316;
+}
+
+.live-info__title {
+  font-family: 'Roboto', Arial, Helvetica, sans-serif;
+  font-weight: 700;
+  margin: 0;
+  padding: 0;
+  font-size: 15px;
+  color: #2B2B2B;
+  line-height: 23px;
+}
+
+.live-info__time {
+  font-family: 'Roboto', Arial, Helvetica, sans-serif;
+  font-weight: 500;
+  margin: 0;
+  padding: 0;
+  opacity: 0.8;
+  font-size: 14px;
+  color: #090909;
+}
+
+.live-info__description {
+  font-size: 14px;
+  color: #090909;
+  line-height: 1.6;
+  margin: $baseline 0 0 0;
+  max-height: $baseline * 19;
+  overflow-y: auto;
+}
+
+.live-coming-up {
+  padding: $baseline;
+  max-width: $baseline * 108;
+  min-height: $baseline * 40;
+  margin: $baseline * 8 auto 0 auto;
+
+  &--empty {
+    opacity: 0;
+  }
+}
+
+.live-coming-up__title {
+  margin: 0 0 $baseline * 2 0;
+  font-family: 'Roboto', Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  color: #544316;
+}
+
+.live-coming-up__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.live-coming-up__item {
+  display: flex;
+  padding-bottom: $baseline * 6;
+  position: relative;
+
+  &:before {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 2px;
+    left: $baseline * 3;
+    top: $baseline;
+    height: 100%;
+    background: #CBCBCB;
+  }
+
+  &:last-of-type:before {
+    display: none;
+  }
+}
+
+.live-coming-up__item-time {
+  background: #1EA362;
+  color: #FFF;
+  border-radius: 50%;
+  font-size: 13px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 48px;
+  width: 48px;
+  margin-right: $baseline * 2;
+  flex: 0 0 auto;
+  position: relative;
+}
+
+.live-coming-up__item-title,
+.live-coming-up__item-author {
+  margin: 0;
+  padding: 0;
+}
+
+.live-coming-up__item-title {
+  font-size: 18px;
+  color: #325C89;
+}
+
+.live-coming-up__item-author {
+  font-size: 16px;
+  color: #416F43;
+}
+
+.live-coming-up__item-description {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+@media (min-width: 360px) {
+  .live-info {
+    min-height: $baseline * 64;
+  }
+}
+
+@media (min-width: 600px) {
+
+  .page-content {
+    margin-top: $baseline * -4;
+  }
+
+  .live-info {
+    display: flex;
+    min-height: $baseline * 42;
+  }
+
+  .live-info__item {
+    width: 50%;
+
+    &:first-of-type {
+      padding-right: $baseline * 5;
+    }
+
+    &:last-of-type {
+      padding-left: $baseline * 5;
+    }
+  }
+
+  .live-info__section {
+    font-size: 20px;
+  }
+
+  .live-info__title {
+    font-size: 16px;
+  }
+
+  .live-info__time {
+    font-size: 15px;
+  }
+
+  .live-info__description {
+    font-size: 15px;
+    max-height: $baseline * 21;
+  }
+
+  .live-info__item-current {
+    .live-info__description {
+      max-height: $baseline * 24;
+    }
+  }
+
+  .live-coming-up__title {
+    font-size: 20px;
+    margin-bottom: $baseline * 4;
+  }
+}
+
+@media (min-width: 1440px) {
+  .page-content {
+    margin-top: $baseline * -7;
+  }
+
+  .live-info {
+    min-height: $baseline * 40;
+  }
+
+  .live-info__section {
+    font-size: 22px;
+  }
+
+  .live-info__title {
+    font-size: 18px;
+  }
+
+  .live-info__time {
+    font-size: 16px;
+  }
+
+  .live-info__description {
+    font-size: 16px;
+    max-height: $baseline * 19;
+  }
+
+  .live-info__item-current {
+    .live-info__description {
+      max-height: $baseline * 25;
+    }
+  }
+
+  .live-coming-up__title {
+    font-size: 22px;
+  }
+}

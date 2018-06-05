@@ -1,0 +1,30 @@
+<header class="header{% if is_live %} header--live{% endif %}">
+
+  <div class="header__content">
+
+    <div class="logo">
+      <a href="/devsummit/" class="logo__icon" title="Go to home page"></a>
+    </div>
+
+    <div class="menu">
+      <input id="menu__toggle" type="checkbox" class="menu__toggle" />
+      <label class="menu__toggle-label" for="menu__toggle" aria-label="Toggle Menu"></label>
+      <div class="menu__underlay" role="presentation"></div>
+
+      <nav class="menu__nav">
+        <ul class="menu__nav-item-container">
+          <li class="menu__nav-item{% if section == 'Schedule' %} menu__nav-item--active{% endif %}"><a href="/devsummit/schedule/day-2">Schedule</a></li>
+          <li class="menu__nav-item{% if section == 'Location' %} menu__nav-item--active{% endif %}"><a href="/devsummit/location">Location</a></li>
+          <li class="menu__nav-item{% if section == 'Code of Conduct' %} menu__nav-item--active{% endif %}"><a href="/devsummit/code-of-conduct">Code of Conduct</a></li>
+          <li class="menu__nav-item"><a rel="noopener" target="_blank" href="https://codelabs.developers.google.com/chrome-dev-summit-2016">Codelabs</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+
+  <a class="header__live-stream{% if is_live %} visible{% endif %}"
+     href="/devsummit/"{% if not is_live %} aria-hidden="true"{% endif %}>
+    <span>Watch the live stream now!</span>
+  </a>
+
+</header>

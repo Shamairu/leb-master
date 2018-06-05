@@ -1,0 +1,363 @@
+/*!
+ *
+ * Copyright 2016 Google Inc. All rights reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+$animation: 0.3s;
+
+.notification-btn {
+  font-family: 'Roboto', Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  color: #333;
+  line-height: 23px;
+  border: none;
+  background: none;
+  transition: opacity 0.2s cubic-bezier(0, 0, 0.3, 1);
+  cursor: pointer;
+  padding: $baseline $baseline * 2 $baseline $baseline;
+  border-radius: 2px;
+  outline: none;
+
+  &--enabled .notification-btn__inner:before {
+    content: 'Notifications enabled';
+    background: url(/devsummit/static/images/icons/ic_notifications_active_black_24px.svg) left center no-repeat;
+  }
+
+  &--disabled .notification-btn__inner:before {
+    content: 'Notifications disabled';
+    background: url(/devsummit/static/images/icons/ic_notifications_none_black_24px.svg) left center no-repeat;
+  }
+
+  &--no-label:before {
+    content: '';
+  }
+}
+
+.notification-btn__inner {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  pointer-events: none;
+
+  &:before {
+    content: '';
+    padding-left: 32px;
+    height: 24px;
+    background: url(/devsummit/static/images/icons/ic_notifications_none_black_24px.svg) left center no-repeat;
+  }
+}
+
+.notification-btn[hidden] {
+  display: none;
+}
+
+.notification-btn[disabled] {
+  opacity: 0.3;
+}
+
+.notification-area {
+  position: fixed;
+  bottom: $baseline * 2;
+  left: $baseline * 2;
+  width: 100%;
+  height: $baseline * 60;
+  max-width: $baseline * 36;
+  max-height: $baseline * 67;
+  overflow: hidden;
+  border-radius: 2px;
+  backface-visibility: hidden;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity $animation cubic-bezier(0, 0, 0.3, 1);
+}
+
+.notification-area--active {
+  opacity: 1;
+}
+
+.notification-ripple {
+  position: absolute;
+  left: -392px;
+  bottom: -392px;
+  border-radius: 50%;
+  width: 848px;
+  height: 848px;
+  background: #313131;
+  backface-visibility: hidden;
+  will-change: transform;
+  transform: scale(0.056);
+  transform-origin: 50% 50%;
+  transition: transform $animation cubic-bezier(0, 0, 0.3, 1);
+}
+
+.notification-content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transform: translateY(100%) translate(0, -64px);
+  transition: transform $animation * 0.85 cubic-bezier(0, 0, 0.3, 1);
+  backface-visibility: hidden;
+  overflow: hidden;
+}
+
+.notification-content__headline {
+  transition: opacity $animation * 0.375 cubic-bezier(0, 0, 0.3, 1);
+  opacity: 0;
+}
+
+.notification-content__header {
+  padding: $baseline;
+  display: flex;
+}
+
+.notification-content__title {
+  font-family: 'Roboto', Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  color: #FFFFFF;
+  font-weight: 500;
+  margin: $baseline * 1.2 0 $baseline 0;
+  outline: none;
+}
+
+.notification-content__description {
+  opacity: 0.6;
+  font-family: 'Roboto', Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  color: #FFFFFF;
+  line-height: 20px;
+}
+
+.notification-toggle-button,
+.notification-close-button {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  width: 48px;
+  height: 48px;
+  border: none;
+  padding: 0;
+  border-radius: 50%;
+  outline: none;
+  flex: 0 0 auto;
+  pointer-events: auto;
+  margin-right: $baseline;
+  cursor: pointer;
+  position: relative;
+
+  &:after {
+    border-radius: 50%;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 48px;
+    height: 48px;
+    opacity: 0;
+    will-change: opacity;
+    transition: opacity $animation * 0.6 cubic-bezier(0, 0, 0.3, 1);
+  }
+
+  &:hover:after,
+  &:focus:after {
+    opacity: 1;
+  }
+}
+
+.notification-toggle-button {
+  background: url(/devsummit/static/images/icons/ic_notifications_white_24px.svg) center center no-repeat;
+}
+
+.notification-toggle-button:after {
+  background: #FFCD43 url(/devsummit/static/images/icons/ic_notifications_black_24px.svg) center center no-repeat;
+}
+
+.notification-content__remove-all-container {
+  height: $baseline * 5;
+  border-top: 1px solid #565656;
+  background: #3A3A3A;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  padding: 0 $baseline;
+}
+
+.notification-content__remove-all {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 12px;
+  color: #FFF;
+  opacity: 0.5;
+  outline: none;
+  padding: 0;
+  margin: 0;
+  text-decoration: underline;
+
+  &:hover,
+  &:focus {
+    opacity: 1;
+  }
+}
+
+.notification-close-button {
+  background: url(/devsummit/static/images/icons/ic_close_white_24px.svg) center center no-repeat;
+  position: absolute;
+  top: $baseline;
+  right: $baseline;
+  margin: 0;
+
+  &:hover:after,
+  &:focus:after {
+    background: #FFCD43 url(/devsummit/static/images/icons/ic_close_black_24px.svg) center center no-repeat;
+  }
+}
+
+.notification-content__list {
+  outline: none;
+  flex: 1;
+  border-top: 1px solid #565656;
+  background: #3A3A3A;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+  transition: opacity $animation * 0.375 cubic-bezier(0, 0, 0.3, 1);
+  opacity: 0;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: $baseline * 5;
+  backface-visibility: hidden;
+}
+
+.notification-content__list-item {
+  display: block;
+  padding: 0;
+}
+
+.notification-item__details {
+  background: none;
+  border: none;
+  width: 100%;
+  padding: 0;
+  outline: none;
+  opacity: 0.7;
+  color: #FFFFFF;
+  display: block;
+
+  &:hover,
+  &:focus {
+    background: rgba(0, 0, 0, 0.4);
+  }
+
+  &--active {
+    opacity: 1;
+    color: #FFCD43;
+
+    .notification-item__details-inner:before {
+      background: url(/devsummit/static/images/icons/ic_notifications_active_yellow_24px.svg) center center no-repeat;
+    }
+  }
+}
+
+.notification-item__details[disabled] {
+  opacity: 0.3;
+}
+
+.notification-item__details-inner {
+  display: flex;
+  width: 100%;
+  padding: $baseline;
+  outline: none;
+  cursor: pointer;
+
+  &:before {
+    content: '';
+    background: url(/devsummit/static/images/icons/ic_notifications_none_white_24px.svg) center center no-repeat;
+    height: 48px;
+    width: 48px;
+    margin: 0 $baseline 0 0;
+    overflow: hidden;
+    display: block;
+  }
+}
+
+.notification-item__breakdown {
+  text-align: left;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.notification-item__breakdown-title {
+  font-family: 'Roboto', Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  padding: $baseline 0 $baseline 0;
+  pointer-events: none;
+}
+
+.notification-item__breakdown-datetime {
+  font-family: 'Roboto', Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  color: #FFF;
+  opacity: 0.8;
+  pointer-events: none;
+}
+
+.notification-area--expanded {
+  pointer-events: auto;
+
+  .notification-ripple {
+    transform: scale(1) translate(30%, -30%);
+  }
+
+  .notification-content {
+    transform: none;
+  }
+
+  .notification-content__headline {
+    transition: opacity $animation * 0.75 cubic-bezier(0, 0, 0.3, 1) $animation * 0.25;
+    opacity: 1;
+  }
+
+  .notification-content__list {
+    transition: opacity $animation * 0.75 cubic-bezier(0, 0, 0.3, 1) $animation * 0.25;
+    opacity: 1;
+  }
+}
+
+@media (min-width: 360px) {
+  .notification-area {
+    max-width: $baseline * 41;
+  }
+}
+
+@media (min-width: 400px) {
+  .notification-area {
+    max-width: $baseline * 47.5;
+  }
+}
+
+@media (min-width: 440px) {
+  .notification-area {
+    max-width: $baseline * 51;
+    height: $baseline * 70;
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "name": "leb",
+  "version": "1.0.0",
+  "description": "Live Event Broadcaster that is made to host events live and keep provide basic useful information about the Event!",
+  "main": "index.js",
+  "scripts": {
+    "postinstall": "(cd scripts/third_party/vrview && npm install)",
+    "test": "lighthouse",
+    "bump": "npm version patch",
+    "build": "npm run build-css && npm run build-js && npm run build-vr && npm run build-resource-list",
+    "build-resource-list": "node ./build/build-resource-list.js",
+    "make-css-folder": "mkdirp static/styles",
+    "build-css": "npm run make-css-folder && node-sass sass/ -o static/styles && npm run clean-css",
+    "clean-css": "node ./build/clean-css.js",
+    "build-js": "rollup -c && babel static/scripts/bootstrap.js --presets babel-preset-babili --out-file static/scripts/bootstrap.js",
+    "build-vr": "npm run build-vr-deps && npm run copy-vr-deps && npm run build-vr-dev && babel static/scripts/webvr.js --presets babel-preset-babili --out-file static/scripts/webvr.js",
+    "build-vr-deps": "(cd scripts/third_party/vrview && npm run build && npm run build-api)",
+    "copy-vr-deps": "cp -r scripts/third_party/vrview static/third_party",
+    "build-vr-dev": "cat scripts/third_party/vrview/build/vrview.min.js scripts/webvr.js > static/scripts/webvr.js",
+    "watch": "npm run build && parallelshell \"npm run watch-sass\" \"npm run watch-js\"",
+    "watch-js": "rollup -wc",
+    "watch-sass": "npm run make-css-folder && node-sass -w sass/ -o static/styles",
+    "optimize-images": "imageoptim --directory static/images",
+    "release": "npm run bump && npm run build && npm run optimize-images"
+  },
+
+  "repository": {
+    "type": "git",
+    "url": "shamiru333@gmail.com"
+  },
+  "keywords": [
+    "Event"
+  ],
+  "author": "Shama IRUTINGABO",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-cli": "^6.16.0",
+    "babel-preset-babili": "0.0.3",
+    "clean-css": "^3.4.19",
+    "eslint": "^3.12.2",
+    "eslint-config-google": "^0.7.1",
+    "imageoptim-cli": "^1.14.8",
+    "mkdirp": "^0.5.1",
+    "node-sass": "^3.10.0",
+    "parallelshell": "^2.0.0",
+    "rollup": "^0.36.0",
+    "rollup-plugin-cleanup": "^0.1.4",
+    "rollup-watch": "^2.5.0",
+    "walk": "^2.3.9"
+  }
+}

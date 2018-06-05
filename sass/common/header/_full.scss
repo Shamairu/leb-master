@@ -1,0 +1,86 @@
+/*!
+ *
+ * Copyright 2016 Google Inc. All rights reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+.header {
+  background: #333;
+}
+
+.header,
+.header__content {
+  background: url(/devsummit/static/images/header/header.svg) top center;
+  background-size: 100% 100%;
+}
+
+.menu__underlay {
+  background: #333;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.animatable .menu__underlay {
+  transition: opacity 0.3s cubic-bezier(0, 0, 0.31, 1);
+}
+
+.menu__toggle-label {
+  background: url(/devsummit/static/images/icons/ic_menu_black_24px.svg) center center no-repeat;
+}
+
+.menu__toggle:checked ~ .menu__underlay {
+  opacity: 0.7;
+  pointer-events: auto;
+}
+
+.logo__icon {
+  background: url(/devsummit/static/images/header/chrome-logo-header.png) left center no-repeat;
+  background-size: ($baseline * 4) ($baseline * 4);
+}
+
+.logo__icon::after {
+  color: #262626;
+}
+
+@media (max-width: 423px) {
+  .logo {
+    width: $baseline * 31;
+  }
+
+  .logo__icon::after {
+    content: 'Chrome Dev Summit';
+  }
+}
+
+@media (min-width: 424px) {
+  .logo__icon {
+    background-size: ($baseline * 6) ($baseline * 6);
+  }
+}
+
+@media (min-width: 672px) {
+  .logo {
+    width: $baseline * 31;
+  }
+
+  .logo__icon::after {
+    content: 'Chrome Dev Summit';
+  }
+}
+
+@media (min-width: 864px) {
+  .header__content {
+    background: none;
+  }
+}

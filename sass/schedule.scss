@@ -1,0 +1,235 @@
+/*!
+ *
+ * Copyright 2016 Google Inc. All rights reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+@import 'common/_variables';
+
+.section-schedule {
+  max-width: $baseline * 108;
+  margin: 0 auto 0 auto;
+  padding-bottom: $baseline * 14;
+}
+
+.schedule-items {
+  max-width: $baseline * 84;
+  margin: 0 auto;
+}
+
+.schedule-nav {
+  padding: $baseline * 2 $baseline * 3;
+  background: #FFF;
+  box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.22);
+  border-radius: 2px;
+  margin-bottom: $baseline * 6;
+  display: flex;
+
+  a {
+    color: #393939;
+    text-decoration: none;
+    margin-right: $baseline * 2;
+  }
+
+  .schedule-nav__item--active {
+    font-weight: 700;
+    color: #1EA362;
+  }
+}
+
+.schedule-nav a:focus,
+.schedule-nav a:active,
+.schedule-nav a:hover {
+  color: #1EA362;
+}
+
+.schedule-item {
+  display: flex;
+  align-items: center;
+  padding: 0 $baseline $baseline * 6 $baseline * 3;
+  position: relative;
+  text-decoration: none;
+
+  &:before {
+    content: '';
+    width: 2px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: $baseline * 6;
+    background: #CBCBCB;
+  }
+
+  &:nth-last-child(1) {
+    padding-bottom: 0;
+  }
+
+  &:nth-child(1) .schedule-item__time:before,
+  &:nth-last-child(1) .schedule-item__time:after {
+    background: #FAFAFA;
+  }
+}
+
+.schedule-item__placeholder,
+.schedule-item__speaker {
+  width: $baseline * 26;
+  flex: 0 0 auto;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  display: none;
+
+  & .schedule-item__speaker-details {
+    position: absolute;
+    bottom: -$baseline;
+    left: 0;
+    transform: translateY(100%);
+    text-align: center;
+    width: $baseline * 26;
+  }
+
+  & h2 {
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    margin: 0;
+    padding: 0;
+    color: #416F43;
+  }
+
+  & h3 {
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    color: #393939;
+    line-height: 24px;
+    margin: 0;
+    padding: 0;
+  }
+
+  &:before {
+    content: '';
+    width: 50%;
+    height: 2px;
+    background: #CBCBCB;
+    position: absolute;
+    top: 50%;
+    right: 0;
+  }
+}
+
+.schedule-item__speaker-image {
+  display: block;
+  width: $baseline * 16;
+  height: $baseline * 16;
+  border-radius: 50%;
+  background: #FFF;
+  position: relative;
+  overflow: hidden;
+}
+
+.schedule-item__time {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  flex: 0 0 auto;
+  align-self: stretch;
+
+  &:before,
+  &:after {
+    height: 100%;
+    width: 48px;
+    display: block;
+    content: '';
+    flex: 1;
+  }
+}
+
+.schedule-item__time-value {
+  background: #1EA362;
+  color: #FFF;
+  border-radius: 50%;
+  font-size: 13px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 48px;
+}
+
+.schedule-item__details {
+  display: flex;
+
+  &:before {
+    content: '';
+    display: block;
+    width: $baseline * 2;
+    margin-right: $baseline;
+    background: url(/devsummit/static/images/schedule/line-horizontal.svg) center center repeat-x;
+    flex: 1 0 auto;
+  }
+}
+
+.schedule-item__placeholder {
+  &:before {
+    display: none;
+  }
+}
+
+.schedule-item__title {
+  font-family: 'Roboto', Arial, Helvetica, sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  color: #325C89;
+  line-height: 23px;
+  margin: 0 0 $baseline;
+  padding: 0;
+}
+
+.schedule-item__description {
+  flex: 1 0 auto;
+  font-size: 14px;
+  color: #393939;
+  line-height: 24px;
+  margin: 0;
+  padding: 0;
+
+  & p {
+    margin: 0;
+  }
+}
+
+@media (min-width: 600px) {
+  .section-schedule {
+    margin-top: $baseline * -4;
+  }
+
+  .schedule-item__speaker,
+  .schedule-item__placeholder {
+    display: flex;
+  }
+
+  .schedule-item {
+    padding-left: $baseline;
+    padding-bottom: $baseline * 12;
+
+    &:before {
+      left: $baseline * 30;
+    }
+  }
+}
+
+@media (min-width: 1440px) {
+  .section-schedule {
+    margin-top: $baseline * -6;
+  }
+}

@@ -1,0 +1,368 @@
+/*!
+ *
+ * Copyright 2016 Google Inc. All rights reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+@import 'common/_variables';
+
+
+.section-home {
+  min-height: 30vh;
+}
+
+.home-cds-info {
+  padding: $baseline * 5 $baseline $baseline * 5 $baseline;
+  margin: 0 auto;
+  background: #FFF;
+  box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.15);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Roboto', Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  color: #404040;
+  line-height: 1.7;
+}
+
+.home-cds-info__content {
+  display: flex;
+  max-width: $baseline * 83;
+  text-align: center;
+  align-items: center;
+
+  p {
+    flex: 1;
+    padding: $baseline * 2;
+  }
+
+  &:after,
+  &:before {
+    content: '';
+    width: 10%;
+    height: 2px;
+    background: #CFCFCF;
+    display: none;
+    flex: 0 0 auto;
+  }
+}
+
+.home-cds-info__dates {
+  font-weight: 700;
+  color: #6387F5;
+}
+
+.home__ctas.home__ctas--over {
+  margin-top: -110px;
+}
+
+.home__ctas svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.home__svg-home-bg-angled {
+  display: none;
+}
+
+.home__ctas,
+.home__location {
+  position: relative;
+  display: block;
+
+  & h2 {
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+    font-weight: 100;
+    font-size: 33px;
+    color: #FFFFFF;
+    margin: 0;
+    position: relative;
+
+    &:after {
+      content: '.';
+      opacity: 0;
+    }
+  }
+
+  & h3 {
+    font-weight: 100;
+    font-size: 16px;
+    color: #FFFFFF;
+    margin: 0;
+    width: 80%;
+    position: relative;
+
+    span {
+      text-transform: uppercase;
+    }
+  }
+}
+
+.home__code-labs,
+.home__schedule,
+.home__vods,
+.home__location a {
+  padding: $baseline * 2;
+  height: $baseline * 36;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  text-decoration: none;
+  position: relative;
+}
+
+.home__cta-bg .home__cta-bg-underlay-left,
+.home__cta-bg .home__cta-bg-underlay-right {
+  opacity: 0;
+  transition: opacity 0.2s cubic-bezier(0, 0, 0.3, 1);
+}
+
+.home__code-labs:hover ~ .home__cta-bg .home__cta-bg-underlay-right,
+.home__schedule:hover ~ .home__cta-bg .home__cta-bg-underlay-left,
+.home__vods:hover ~ .home__cta-bg .home__cta-bg-underlay-left,
+.home__code-labs:focus ~ .home__cta-bg .home__cta-bg-underlay-right,
+.home__schedule:focus ~ .home__cta-bg .home__cta-bg-underlay-left,
+.home__vods:focus ~ .home__cta-bg .home__cta-bg-underlay-left,
+.home__code-labs:active ~ .home__cta-bg .home__cta-bg-underlay-right,
+.home__schedule:active ~ .home__cta-bg .home__cta-bg-underlay-left,
+.home__vods:active ~ .home__cta-bg .home__cta-bg-underlay-left {
+  opacity: 0.3;
+}
+
+.home__code-labs {
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  background: url(/devsummit/static/images/home/code-labs.svg) center center no-repeat;
+  background-size: 80% 80%;
+}
+
+.home__schedule {
+  background: url(/devsummit/static/images/home/schedule.svg) center center no-repeat;
+  background-size: 80% 80%;
+}
+
+.home__vods {
+  background: url(/devsummit/static/images/home/video.svg) center center no-repeat;
+  background-size: 100% 100%;
+  background-position: 50% 0%;
+}
+
+.home__location {
+  background: url(/devsummit/static/images/masthead/location-masthead@1x.jpg) center center no-repeat;
+  background-size: cover;
+  margin: 0 auto;
+  max-width: $baseline * 108;
+  height: $baseline * 36;
+
+  a {
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+
+    &:before {
+      content: '';
+      background: #FFF;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0;
+      will-change: opacity;
+      transition: opacity 0.2s cubic-bezier(0, 0, 0.3, 1);
+    }
+
+    &:hover:before,
+    &:focus:before,
+    &:active:before {
+      opacity: 0.2;
+    }
+  }
+}
+
+.home__waiting-list {
+  font-family: 'Roboto', Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  color: #1EA362;
+  width: 100%;
+  max-width: $baseline * 108;
+  margin: $baseline * 3 auto 0 auto;
+  display: flex;
+  min-height: $baseline * 10;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+
+  .home__event-updates {
+    position: relative;
+  }
+
+  a {
+    color: #FFF;
+    text-decoration: none;
+    flex: 1;
+    padding: 0 $baseline * 2;
+    display: flex;
+    align-items: center;
+
+    .home__waiting-list-hover {
+      will-change: opacity;
+      transition: opacity 0.2s cubic-bezier(0, 0, 0.3, 1);
+      opacity: 0;
+    }
+
+    &:hover,
+    &:focus,
+    &:active {
+      .home__waiting-list-hover {
+        opacity: 0.2;
+      }
+    }
+
+    &:after {
+      position: relative;
+      content: '';
+      background: url(/devsummit/static/images/icons/ic_confirmation_number_white_24px.svg) center center no-repeat;
+      background-size: contain;
+      width: 24px;
+      height: 24px;
+      order: 1;
+      margin-right: $baseline * 1.5;
+    }
+
+    p {
+      position: relative;
+      order: 2;
+    }
+  }
+
+  svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}
+
+@media (min-width: 424px) {
+  .home-cds-info {
+    font-size: 16px;
+    padding: $baseline * 10 $baseline * 2 $baseline * 8 $baseline * 2;
+  }
+
+  .home__waiting-list {
+    margin-top: $baseline * 4;
+  }
+}
+
+@media (min-width: 440px) {
+  .home-cds-info__content {
+    &:after,
+    &:before {
+      display: block;
+    }
+  }
+}
+
+@media (min-width: 600px) {
+
+  .home-cds-info {
+    font-size: 18px;
+    padding-bottom: $baseline * 20;
+  }
+
+  .home__svg-home-bg-rect {
+    display: none;
+  }
+
+  .home__svg-home-bg-angled {
+    display: block;
+  }
+
+  .home__ctas {
+    margin: 0 auto;
+    max-width: $baseline * 108;
+    display: flex;
+    padding-bottom: $baseline * 4.5;
+  }
+
+  .home__code-labs {
+    border-top: none;
+    border-left: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  .home__code-labs,
+  .home__schedule {
+    padding-bottom: $baseline * 4;
+    width: 50%;
+    height: $baseline * 40;
+    background-size: 100% 100%;
+  }
+
+  .home__vods {
+    padding-bottom: $baseline * 4;
+    width: 50%;
+    height: $baseline * 40;
+    background-size: 100% 100%;
+    background-position: 50% 0%;
+  }
+
+  .home__location {
+    height: $baseline * 42;
+    margin: $baseline * -7 auto $baseline * -6 auto;
+  }
+
+  .home__waiting-list-and-event-updates {
+    margin: -$baseline * 6 auto $baseline * 3 auto;
+    max-width: $baseline * 108;
+    position: relative;
+    display: flex;
+
+    > * {
+      margin: 0;
+      flex: 0 0 auto;
+      width: 50%;
+      max-width: 50%;
+      min-height: $baseline * 14;
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .home__ctas.home__ctas--over {
+    margin-top: 0;
+  }
+}
+
+@media (min-width: 800px) {
+  .home-cds-info{
+    font-size: 22px;
+  }
+
+  .home__waiting-list {
+    font-size: 22px;
+    height: $baseline * 12;
+    padding: $baseline * 2;
+
+    a:after {
+      width: 48px;
+      height: 48px;
+      margin-right: $baseline * 3;
+    }
+
+    p {
+      flex: 1;
+    }
+  }
+}

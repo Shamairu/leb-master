@@ -1,0 +1,147 @@
+/*!
+ *
+ * Copyright 2016 Google Inc. All rights reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+
+.toast-container {
+  z-index: 11000;
+}
+
+.notification-area {
+  z-index: 10500;
+}
+
+.menu__nav {
+  z-index: 10000;
+}
+
+.header {
+  z-index: 9000;
+}
+
+.youtube-video-player {
+  z-index: 6500;
+}
+
+.youtube-video-player--small-player {
+  z-index: 8000;
+}
+
+.youtube-video-player__thumb {
+  z-index: 1;
+}
+
+.youtube-video-player__link {
+  z-index: 2;
+}
+
+.masthead {
+  z-index: 5000;
+}
+
+.section-schedule {
+  z-index: 6000;
+}
+
+.masthead:after {
+  z-index: 30;
+}
+
+.masthead__title {
+  z-index: 3;
+}
+
+.masthead__graphic-underlay {
+  z-index: 1;
+}
+
+.masthead__graphic {
+  z-index: 2;
+}
+
+.masthead-underlay {
+  z-index: 0;
+}
+
+.masthead-underlay svg {
+  z-index: 0;
+}
+
+.masthead-underlay__content {
+  z-index: 1;
+}
+
+.footer__content {
+  z-index: 1;
+}
+
+.home__bg-cta {
+  z-index: 0;
+}
+
+.home__code-labs,
+.home__vods,
+.home__schedule {
+  z-index: 1;
+}
+
+.home__ctas {
+  z-index: 2;
+}
+
+.home__location {
+  z-index: 1;
+}
+
+.location__breakdown,
+.location-livestream {
+  z-index: 2;
+}
+
+.section-live,
+.section-session {
+  z-index: 6000;
+}
+
+.section-home,
+.section-over,
+.section-location {
+  z-index: 1;
+}
+
+.event-updates {
+  z-index: 1;
+}
+
+.footer {
+  z-index: 0;
+}
+
+.header__content {
+  z-index: 1;
+}
+
+.header__live-stream {
+  z-index: 0;
+}
+
+.footer__event-updates {
+  z-index: 1;
+}
+
+button.vr {
+  z-index: 4
+}

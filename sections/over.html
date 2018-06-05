@@ -1,0 +1,57 @@
+{% extends "templates/base.html" %}
+{% set inline_styles=True %}
+{% set mastheadimage="/devsummit/static/images/masthead/homepage-masthead" %}
+{% set mastheadtitle="Chrome Dev Summit" %}
+{% set mastheadimagetitle="Darin Fisher delivering the Keynote at Chrome Dev Summit 2015." %}
+{% set pagestyles="static/styles/home.css" %}
+{% set section="Over" %}
+{% block content %}
+  <section class="home-cds-info">
+    <div class="home-cds-info__content">
+      <p>Connect with Chrome engineers and other leading developers for a two-day
+      exploration of building beautiful and performant experiences.</p>
+    </div>
+
+  </section>
+
+  <section class="home__ctas home__ctas--over">
+    <a class="home__vods" href="https://www.youtube.com/playlist?list=PLNYkxOF6rcIBTs2KPy1E6tIYaWoFcG3uj">
+      <h2>Videos</h2>
+      <h3>Watch the talks on YouTube</h3>
+    </a>
+
+    <a class="home__code-labs" href="https://codelabs.developers.google.com/">
+      <h2>Code Labs</h2>
+      <h3>Check out our step-by-step coding guides</h3>
+    </a>
+
+    <svg class="home__cta-bg" width="100%" height="100%" role="presentation" preserveAspectRatio="none" viewBox="0 0 100 100">
+      <defs>
+        <clipPath id="home__cta-clip" clipPathUnits="objectBoundingBox">
+          <polygon points="0 0 1 0 1 1 0 0.86" />
+        </clipPath>
+      </defs>
+
+      <g class="home__svg-home-bg-rect">
+        <rect width="100%" height="100%" fill="#23A061" />
+        <rect class="home__cta-bg-underlay-left" width="100%" height="50%" x="0" y="0" fill="#000" />
+        <rect class="home__cta-bg-underlay-right" width="100%" height="50%" x="0" y="50%" fill="#000" />
+      </g>
+
+      <g class="home__svg-home-bg-angled" clip-path="url(#home__cta-clip)">
+        <rect width="100%" height="100%" fill="#23A061" />
+        <rect class="home__cta-bg-underlay-left" width="50%" height="100%" x="0" y="0" fill="#000" />
+        <rect class="home__cta-bg-underlay-right" width="50%" height="100%" x="50%" y="0" fill="#000" />
+        <polygon points="0 86 100 94 100 100 0 100" fill="#187B4A"></polygon>
+      </g>
+    </svg>
+  </section>
+
+  <section class="home__location">
+    <a href="/devsummit/location">
+      <h2>Location</h2>
+      <h3>Chrome Dev Summit is at <span>SF&#8203;Jazz</span> Center</h3>
+    </a>
+  </section>
+
+{% endblock %}

@@ -1,0 +1,74 @@
+{% extends "templates/base.html" %}
+{% set mastheadimage="/devsummit/static/images/masthead/collage-masthead" %}
+{% set mastheadimagetitle="A collage of photos from Chrome Dev Summit 2015." %}
+{% set mastheadtitle="Schedule" %}
+{% set pagestyles="static/styles/schedule.css" %}
+{% set section="Schedule" %}
+{% set sorted_sessions=(sessions | get_keys_for_date(date))  %}
+{% block content %}
+
+  {% include "templates/includes/schedule-nav.partial.html" %}
+
+  <div class="schedule-items">
+
+    {% for time in sorted_sessions %}
+
+      {% set session_info = sessions[date][time] %}
+
+      {% if session_info["url"] %}
+      <a href="{{ session_info["url"] }}" class="schedule-item" aria-label="{{ time | as_pst(date) }}. {{ session_info["speaker"] }}, {{ session_info["name"] }}">
+      {% else %}
+      <section class="schedule-item" aria-label="{{ time | as_pst(date) }}. {{ session_info["name"] }}">
+      {% endif %}
+
+        {% if session_info["speaker"] %}
+        <div class="schedule-item__speaker">
+          <div class="schedule-item__speaker-image">
+            <img src="{{ session_info["speakerImg"] }}" alt="{{ session_info["speaker"] }}" width="128" height="128">
+          </div>
+
+          <div class="schedule-item__speaker-details">
+            <h2>{{ session_info["speaker"] }}</h2>
+            <h3>{{ session_info["speakerRole"] }}</h3>
+          </div>
+        </div>
+        {% else %}
+        <div class="schedule-item__placeholder"></div>
+        {% endif %}
+
+        <div class="schedule-item__time">
+          <time title="{{ time | as_pst(date) }}" class="schedule-item__time-value" datetime="{{ date }}T{{ time }}-08:00">{{ time | as_24hr }}</time>
+        </div>
+
+        <div class="schedule-item__details">
+          <div class="schedule-item__details-inner">
+            <h2 class="schedule-item__title">{{ session_info["name"] }}</h2>
+            <div class="schedule-item__description">
+              {% if session_info["list"] %}
+                <ul>
+                  {% for item in session_info["list"] %}
+                    <li>
+                    {{ item.title }}
+                    </li>
+                  {%endfor %}
+                </ul>
+              {% elif session_info["description"] %}
+                <p>{{ session_info["description"] }}</p>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+
+      {% if session_info["url"] %}
+      </a>
+      {% else %}
+      </section>
+      {% endif %}
+
+    {% endfor %}
+  </div>
+
+  <div class="schedule-adjustment" aria-hidden="true">
+    Please note: all times are in <span class="schedule-adjustment__value">PST</span>. <button class="toggle-localized-times">Adjust to PST</button>
+  </div>
+{% endblock %}

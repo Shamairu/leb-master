@@ -1,0 +1,130 @@
+{% macro masthead(is_partial=none, image=none, title=none, mastheadimagetitle=none, is_expanded=none, youtubeId=none, autoplay=none, video_name=none, is_live=False, has_divider=False) %}
+{% if youtubeId %}
+<div class="youtube-video-player"{% if youtubeId %} data-youtube-id="{{ youtubeId }}"{% endif %}>
+  {% if autoplay %}
+  <iframe data-title="{{ video_name }}" class="youtube-video-player__thumb" src="https://www.youtube.com/embed/{{ youtubeId }}?autoplay=1" frameborder="0" allowfullscreen></iframe>
+  {% else %}
+  <a title="Play video of {{ video_name }}" class="youtube-video-player__thumb" href="https://www.youtube.com/watch?v={{ youtubeId }}">
+    <img role="presentation" src="https://img.youtube.com/vi/{{ youtubeId }}/0.jpg" alt="{{ video_name }}">
+  </a>
+  {% endif %}
+</div>
+{% endif %}
+
+{{ caller() }}
+
+<div class="masthead{% if is_expanded %} expanded{% endif %}{% if is_live %} masthead--live{% endif %}">
+
+  <h1 tabindex="-1" class="masthead__title"{% if not title %} aria-hidden="true"{% endif %}>{{ title }}</h1>
+
+  <div class="masthead__graphic-underlay">
+    <svg width="100%" height="99.8%" preserveAspectRatio="xMidYMax slice" viewBox="0 0 1224 612">
+      <g clip-path="url(#masthead-clip)" x="0" y="0">
+        <rect fill="#222" width="100%" height="100%" />
+      </g>
+    </svg>
+  </div>
+
+  <div class="masthead__graphic" role="img" aria-label="Masthead: {{ mastheadimagetitle }}">
+
+    <svg width="100%" height="100%" preserveAspectRatio="xMidYMax slice" viewBox="0 0 1224 612">
+      <foreignObject clip-path="url(#masthead-clip)" width="100%" height="100%">
+        <style>
+          #masthead-image {
+            background: url({{ image }}@1x.jpg) center center no-repeat;
+            background-size: cover;
+            width: 1224px;
+            height: 612px;
+            background-position: 0 0;
+          }
+
+          .masthead--live #masthead-image {
+            background-position: 0 6vw;
+          }
+
+          @media (min-width: 1000px) and (max-width: 1439px) {
+            #masthead-image {
+              background-position: 0 4vw;
+            }
+
+            .masthead--live #masthead-image {
+              background-position: 0 10vw;
+            }
+          }
+
+          @media (min-width: 1204px) and (max-width: 1439px) {
+            #masthead-image {
+              background-position: 0 7vw;
+            }
+
+            .masthead--live #masthead-image {
+              background-position: 0 13vw;
+            }
+          }
+
+          @media (min-width: 1320px) and (max-width: 1439px) {
+            #masthead-image {
+              background-position: 0 12vw;
+            }
+
+            .masthead--live #masthead-image {
+              background-position: 0 16vw;
+            }
+          }
+
+          @media (min-width: 1440px) {
+            #masthead-image {
+              {# A YT video will have a blurred image background, so there's no point in having a 1.5x version #}
+              {% if not youtubeId %}
+              background: url({{ image }}@1.5x.jpg) center center no-repeat;
+              background-size: cover;
+              {% endif %}
+              background-position: 0 8vw;
+            }
+
+            .masthead--live #masthead-image {
+              background-position: 0 12vw
+            }
+          }
+
+          @media (min-width: 1840px) {
+            #masthead-image {
+              background-position: 0 6vw;
+            }
+
+            .masthead--live #masthead-image {
+              background-position: 0 8vw;
+            }
+          }
+        </style>
+        <div id="masthead-image"></div>
+      </foreignObject>
+    </svg>
+
+    <svg width="0" height="0">
+      <defs>
+          <clipPath id="masthead-clip" clipPathUnits="userSpaceOnUse">
+            <polygon points="0 0 1224 0 1224 564 0 612"></polygon>
+          </clipPath>
+      </defs>
+    </svg>
+  </div>
+
+  <div class="masthead-underlay">
+
+    <svg width="100%" height="100%" preserveAspectRatio="xMidYMax slice" viewBox="0 0 1224 612">
+      <polygon fill="#FFCD43" points="0 0 1224 0 1224 590 0 612"></polygon>
+    </svg>
+
+    <svg class="masthead-underlay__divider{% if not has_divider %} masthead-underlay__divider--invisible{% endif %}" width="100%" height="400px" preserveAspectRatio="none" viewBox="0 0 100 100">
+      <line stroke="#BC9731" x1="0" y1="0" x2="100" y2="50" />
+      <line stroke="#BC9731" x1="100" y1="50" x2="0" y2="100" />
+    </svg>
+
+    <svg class="masthead-underlay__accent" width="100%" height="400px" preserveAspectRatio="xMidYMax slice" viewBox="0 0 1224 612">
+      <polygon fill="#C7A139" points="0 0 1224 0 1224 590 0 612"></polygon>
+    </svg>
+
+  </div>
+</div>
+{% endmacro %}

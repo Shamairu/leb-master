@@ -1,0 +1,51 @@
+application: chromedevsummit-site
+version: v20161130
+
+runtime: python27
+api_version: 1
+threadsafe: true
+skip_files:
+- (^node_modules/.*)
+- (^.git/.*)
+- .DS_Store
+
+handlers:
+
+- url: /devsummit/static/third_party/vrview/(.*)
+  static_files: static/third_party/vrview/\1
+  expiration: "1d"
+  upload: static/third_party/vrview/(.*)
+  secure: always
+
+- url: /devsummit/static/third_party/fonts/(.*)
+  static_files: static/third_party/fonts/\1
+  expiration: "1d"
+  upload: static/third_party/fonts/(.*)
+  secure: always
+
+- url: /devsummit/static/images/(.*)
+  static_files: static/images/\1
+  expiration: "1d"
+  upload: static/images/(.*)
+  secure: always
+
+- url: /devsummit
+  script: redirector.app
+  secure: always
+
+- url: /devsummit/(.*)
+  script: main.app
+  secure: always
+
+- url: /devsummit/LICENSE
+  static_files: dist/LICENSE
+  expiration: "7d"
+  mime_type: text/plain
+  upload: dist/LICENSE
+  secure: always
+
+libraries:
+- name: webapp2
+  version: latest
+- name: jinja2
+  version: latest

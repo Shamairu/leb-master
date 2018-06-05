@@ -1,0 +1,168 @@
+/*!
+ *
+ * Copyright 2016 Google Inc. All rights reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the Liacense is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+.page-content {
+  position: relative;
+  margin-top: -3vmax;
+  outline: none;
+}
+
+.animatable .page-content {
+  will-change: opacity;
+  transition: opacity 0.3s cubic-bezier(0, 0, 0.3, 1) 0.3s;
+}
+
+.hide-areas .page-content {
+  opacity: 0;
+  transition: opacity 0.3s cubic-bezier(0, 0, 0.3, 1);
+}
+
+.event-updates {
+  pointer-events: auto;
+  margin: 0;
+  background: #313131;
+  color: #FFF;
+  position: relative;
+  padding: $baseline * 2 0;
+  font-family: 'Roboto', Arial, Helvetica, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  // justify-content: center;
+
+  .notification-btn {
+    color: #FFF;
+    position: relative;
+    opacity: 0.7;
+    padding: $baseline 0;
+    margin-left: $baseline * 2;
+
+    &[disabled] {
+      opacity: 0.3;
+    }
+
+    .notification-btn__inner:before {
+        background-image: url(/devsummit/static/images/icons/ic_notifications_none_white_24px.svg);
+      }
+
+    &--enabled {
+      color: #FFCD43;
+      opacity: 1;
+
+      .notification-btn__inner:before {
+        background-image: url(/devsummit/static/images/icons/ic_notifications_active_yellow_24px.svg);
+      }
+    }
+  }
+
+  p {
+    margin: 0 $baseline * 2 $baseline 0;
+    position: relative;
+    font-size: 16px;
+    color: #FFF;
+    padding-left: $baseline;
+  }
+
+  a {
+    display: flex;
+    flex: 1;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    margin: 0;
+    padding: 0 $baseline * 2;
+    position: relative;
+    font-size: 16px;
+    color: #FFF;
+
+    &:before {
+      background: url(/devsummit/static/images/icons/ic_mail_white_24px.svg) center center no-repeat;
+      background-size: 24px 24px;
+      content: '';
+      display: block;
+      flex: 0 0 auto;
+      width: 24px;
+      height: 24px;
+      margin-right: 12px;
+    }
+
+    span {
+      height: 100%;
+      display: block;
+      max-width: $baseline * 52;
+    }
+  }
+
+  svg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+  }
+
+  .event-updates__register {
+    display: none;
+  }
+}
+
+.push-enabled .event-updates {
+  display: block;
+  min-height: $baseline * 13;
+
+  .event-updates__livestream-form {
+    display: none;
+  }
+
+  .event-updates__register {
+    display: block;
+  }
+}
+
+@media (min-width: 600px) {
+  .event-updates {
+    p {
+      padding-left: $baseline * 2;
+    }
+
+    a {
+      align-items: center;
+    }
+  }
+}
+
+@media (min-width: 800px) {
+  .event-updates {
+    padding: $baseline * 2;
+
+    a {
+      font-size: 16px;
+      padding: 0 $baseline * 2;
+      align-items: center;
+      justify-content: center;
+
+      &:before {
+        flex: 0 0 auto;
+        background-size: 48px 48px;
+        width: 48px;
+        height: 48px;
+        margin-right: 24px;
+      }
+    }
+  }
+}

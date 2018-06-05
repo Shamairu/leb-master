@@ -1,0 +1,123 @@
+{% extends "templates/base.html" %}
+{% set mastheadimage="/devsummit/static/images/masthead/location-masthead" %}
+{% set mastheadimagetitle="Miner Auditorium at SF Jazz." %}
+{% set mastheadtitle="Location" %}
+{% set pagestyles="static/styles/location.css" %}
+{% set section="Location" %}
+{% block content %}
+  <aside class="location-topline-info">
+    <div class="location-topline-info__content">
+      <p>This year we're going to be in the heart of San Francisco at the <a href="https://www.sfjazz.org/" target="_blank">SFJAZZ Center</a>.</p>
+    </div>
+  </aside>
+
+  <section class="location-travel-grant">
+    <svg width="100%" height="100%" preserveAspectRatio="none" viewBox="0 0 100 100">
+      <polygon points="0 0 100 4 100 100 0 100" fill="#187B4A" />
+      <polygon points="0 0 100 12 100 100 0 100" fill="#23A061" />
+    </svg>
+
+    <h3>Travel Grant</h3>
+
+    <p>We believe a diversity of attributes, experiences, and perspectives are needed to build tools and apps that can change the world. So, we’ve partnered with the <a href="http://womentechmakers.com/" target="_blank">Women Techmakers</a> team to offer travel grants to women in technology interested in attending. <a href="https://docs.google.com/a/google.com/forms/d/e/1FAIpQLSexNcW98ePDlaLjis9YG68un6WqsPYGHZVjcKGVHXk_fL_EpA/viewform" target="_blank">Apply here to join us in San Francisco</a>.</p>
+  </section>
+
+  <section class="location-breakdown">
+
+    <section class="location-breakdown__address-and-public-transport">
+
+      <svg width="100%" height="100%" preserveAspectRatio="none" viewBox="0 0 100 100">
+        <polygon points="0 100 100 0 100 100" fill="#3C5382" />
+      </svg>
+
+      <section class="location-breakdown__address">
+        <div class="vcard">
+          <div class="fn org">
+            <strong class="organization-name">SFJAZZ Center</strong>
+            <span class="street-address">201 Franklin Street</span>
+            <span class="locality">San Francisco</span>
+            <span class="postal-code">CA 94102</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="location-breakdown__public-transport">
+        <h2 class="location-breakdown__public-transport-title">Public Transport</h2>
+
+        <p>The venue is easily accessible by public transportation, including:</p>
+        <ul>
+          <li>BART - <a href="http://www.bart.gov/stations/civc" target="_blank">Civic Center/UN Plaza station</a></li>
+          <li>Muni - <a href="https://www.sfmta.com/maps/muni-metro-map" target="_blank">Civic Center and Van Ness stations</a></li>
+          <li>Caltrain - <a href="http://www.caltrain.com/stations/sanfranciscostation.html" target="_blank">San Francisco station</a></li>
+        </ul>
+      </section>
+    </section>
+
+    <section class="location-breakdown__by-car-and-by-air">
+
+      <svg width="100%" height="100%" preserveAspectRatio="none" viewBox="0 0 100 100">
+        <polygon points="0 0 100 0 0 100" fill="#5472AE" />
+      </svg>
+
+      <section class="location-breakdown__by-car">
+        <h2 class="location-breakdown__by-car-title">By Car</h2>
+
+        <p>Attendees who plan to drive can find nearby parking at:</p>
+        <ul>
+          <li><a href="https://www.sfmta.com/getting-around/parking/parking-garages/performing-arts-garage" target="_blank">Performing Arts Garage</a> - 360 Grove Street</li>
+          <li><a href="https://www.sfmta.com/getting-around/parking/parking-garages/civic-center-garage" target="_blank">Civic Center Garage</a> - 355 McAllister Street</li>
+          <li><a href="http://californiaparking.com/110-franklin-civic-center.shtml" target="_blank">California Parking</a> - 110 Franklin Street</li>
+        </ul>
+      </section>
+
+      <section class="location-breakdown__by-air">
+        <h2 class="location-breakdown__by-air-title">By Air</h2>
+
+        <p>If you're coming from further away, the closest airports are <a href="https://www.flysfo.com/">SFO</a> and <a href="http://www.oaklandairport.com/">OAK</a>.</p>
+      </section>
+    </section>
+  </section>
+
+  <section class="location-breakdown__map-container">
+    <a class="location-breakdown__map" href="https://goo.gl/maps/3DdGhcDobPw" rel="noopener" target="_blank"></a>
+  </section>
+
+  <section class="location-breakdown__lyft">
+    <svg width="100%" height="100%" preserveAspectRatio="none" viewBox="0 0 100 100">
+      <polygon points="0 0 100 0 100 90 0 100" fill="#444" />
+      <polygon points="0 0 100 0 100 75 0 100" fill="#535353" />
+    </svg>
+
+    <p class="location-breakdown__lyft-text">We’re also offering attendees a Lyft discount code for 20% off two rides (maximum discount of $10) to and from the SFJAZZ Center during the event. Look for the code in the next email from us!</p>
+  </section>
+
+  <section class="location-breakdown__additional-info">
+    <section class="location-breakdown__additional-info-item">
+      <h3>Nearby Hotels</h3>
+      <ul>
+        <li><a href="http://www.jdvhotels.com/hotels/california/san-francisco-hotels/phoenix-hotel/" target="_blank">Phoenix Hotel</a> - 0.7 Miles</li>
+        <li><a href="http://www.jdvhotels.com/hotels/california/san-francisco-hotels/hotel-kabuki/?rt=google%7Ccpc%7CHKT01-HotelKabuki-Brand%7Chotel%20kabuki%20sf&adpos=1t1&gclid=CNXNmvqox88CFdhbhgodLRYKlw" target="_blank">Hotel Kabuki</a> - 1.0 Miles</li>
+        <li><a href="http://www.jdvhotels.com/hotels/california/san-francisco-hotels/hotel-carlton/?utm_source=yelp.com&utm_medium=media&utm_content=hotel-carlton&utm_campaign=business-listing" target="_blank">Hotel Carlton</a> - 1.3 Miles</li>
+        <li><a href="http://www.fairmont.com/san-francisco/" target="_blank">The Fairmont</a> San Francisco - 1.9 Miles</li>
+        <li><a href="http://www.stregissanfrancisco.com/" target="_blank">St. Regis San Francisco</a> - 2.0 Miles</li>
+        <li><a href="http://www.theorchardhotel.com/" target="_blank">Orchard Hotel</a> - 2.2 Miles</li>
+      </ul>
+    </section>
+
+    <section class="location-breakdown__additional-info-item">
+      <h3>Child Care</h3>
+      <p>We’re excited to offer child care at Chrome Dev Summit 2016! Contact us at <a href="mailto:chrome-dev-summit@google.com">chrome-dev-summit@google.com</a> to learn more. Please note that we have limited availability, but we will do our best to accommodate all requests.</p>
+    </section>
+
+    <section class="location-breakdown__additional-info-item">
+      <h3>Prayer Room and Mother’s Room</h3>
+      <p>We will have a prayer room and Mother’s Room available onsite throughout the event. If you are interested in utilizing these spaces, please ask any registration staff member when you check in to learn more.</p>
+    </section>
+
+    <section class="location-breakdown__additional-info-item">
+      <h3>Accessibility Accommodations</h3>
+      <p>If you have any accessibility accommodation needs, please let us know by emailing <a href="mailto:chrome-dev-summit@google.com">chrome-dev-summit@google.com</a>. We will provide live captioning services in the general sessions.</p>
+    </section>
+  </section>
+
+{% endblock %}

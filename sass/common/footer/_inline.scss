@@ -1,0 +1,89 @@
+/*!
+ *
+ * Copyright 2016 Google Inc. All rights reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+
+.footer {
+  position: relative;
+  height: $baseline * 24;
+  color: #FFF;
+  display: flex;
+  align-items: flex-end;
+}
+
+.footer__content {
+  display: flex;
+  position: relative;
+  width: 100%;
+  max-width: $baseline * 108;
+  margin: 0 auto;
+  padding: 0 $baseline;
+  font-size: 12px;
+  line-height: $baseline * 6;
+}
+
+.footer svg {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.footer__content p {
+  margin: 0 $baseline * 2 0 0;
+}
+
+.footer__content p:last-of-type {
+  margin-right: 0;
+}
+
+.footer__content a {
+  color: #FFF;
+}
+
+@media (min-width: 424px) {
+  .footer {
+    height: $baseline * 30;
+  }
+
+  .footer__content {
+    font-size: 14px;
+    line-height: $baseline * 8;
+  }
+
+  .footer__content p {
+    margin-right: $baseline * 2;
+  }
+}
+
+@media (min-width: 600px) {
+  .footer {
+    height: $baseline * 34;
+  }
+
+  .footer__content p {
+    margin-right: $baseline * 3;
+  }
+}
+
+@media (min-width: 800px) {
+  .footer {
+    height: $baseline * 38;
+  }
+
+  .footer__content p {
+    margin-right: $baseline * 4;
+  }
+}

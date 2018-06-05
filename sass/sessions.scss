@@ -1,0 +1,143 @@
+/*!
+ *
+ * Copyright 2016 Google Inc. All rights reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+@import 'common/_variables';
+
+.session-info {
+  display: flex;
+  position: relative;
+  padding: $baseline;
+  margin: 0 auto;
+  max-width: $baseline * 108;
+  min-height: 48vh;
+}
+
+.session-info__back {
+  max-width: $baseline * 108;
+  margin: 0 auto;
+  padding: $baseline;
+}
+
+.session-info__back-link {
+  display: flex;
+  color: #544316;
+
+  &:before {
+    content: '';
+    background: url(/devsummit/static/images/icons/ic_arrow_back_black_24px.svg) center center no-repeat;
+    width: 24px;
+    height: 24px;
+    margin-right: $baseline;
+  }
+}
+
+.session-info__title {
+  font-family: 'Roboto', Arial, Helvetica, sans-serif;
+  font-size: 24px;
+  color: #544316;
+  margin: 0;
+}
+
+.session--pre .session-info__back-link {
+  color: #1EA362;
+  padding-top: $baseline * 10;
+}
+
+.session--pre .session-info__title {
+  color: #325C89;
+}
+
+.session-info__speaker {
+  font-family: 'Roboto', Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  color: #2B2B2B;
+  margin: 0;
+}
+
+.session-info__time {
+  font-family: 'Roboto', Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.5);
+  margin: 0;
+}
+
+.session-breakdown {
+  width: 100%;
+}
+
+.session-info__description {
+  color: #090909;
+  margin-bottom: $baseline * 6;
+  max-width: 600px;
+}
+
+.session-info__list-item {
+  width: 100%;
+  display: block;
+
+  &:last-of-type .session-info__list-item-description {
+    border-bottom: none;
+  }
+}
+
+.session-info__list-item-summary {
+  color: #325C89;
+  padding: $baseline;
+  font-weight: 500;
+  font-size: 18px;
+  outline: none;
+  cursor: pointer;
+
+  &:focus,
+  &:hover {
+    background: #EEE;
+    color: #1F3853;
+  }
+}
+
+.session-info__list-item-description {
+  padding-bottom: $baseline * 2;
+  margin-bottom: $baseline * 2;
+  border-bottom: 1px solid #e2e2e2;
+
+  p {
+    margin: 0;
+    padding: 0 0 0 $baseline * 3;
+  }
+}
+
+.session-speaker-info__image {
+  width: $baseline * 16;
+  height: $baseline * 16;
+  background: #FFF;
+  border-radius: 50%;
+  border: none;
+  margin-right: $baseline * 2;
+  flex: 0 0 auto;
+  display: none;
+  overflow: hidden;
+}
+
+@media (min-width: 800px) {
+  .section-session {
+    margin-top: 0;
+  }
+
+  .session-speaker-info__image {
+    display: block;
+  }
+}

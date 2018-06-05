@@ -1,0 +1,89 @@
+{% extends "templates/base.html" %}
+{% set mastheadimage="/devsummit/static/images/masthead/collage-masthead" %}
+{% set mastheadimagetitle="A collage of photos from Chrome Dev Summit 2015." %}
+{% set session_info=(sessions | find_session(url)) %}
+
+
+{% if session_info["youtubeId"] %}
+  {% set mastheadimage="/devsummit/static/images/masthead/collage-masthead-blurred" %}
+  {% set mastheadimagetitle="A blurred collage of photos from Chrome Dev Summit 2015." %}
+{% endif %}
+
+{% set youtubeId=session_info["youtubeId"] %}
+{% set back_link="/devsummit/schedule" %}
+{% if session_info["day_index"] == 2 %}
+  {% set back_link="/devsummit/schedule/day-2" %}
+{% endif %}
+
+{% set pagestyles="static/styles/sessions.css" %}
+{% set section="Session" %}
+{% block content %}
+
+  {% if session_info %}
+    <div class="session{% if not youtubeId %} session--pre{% endif %}">
+
+      <div class="session-info__back">
+        <a href="{{ back_link }}" class="session-info__back-link">Back to Day {{ session_info["day_index"] }} Schedule</a>
+      </div>
+
+      <div class="session-info">
+
+        {% if session_info["speakerImg"] and not youtubeId %}
+        <div class="session-speaker-info__image">
+          <img src="{{ session_info["speakerImg"] }}" alt="{{ session_info["speaker"] }}" width="128" height="128">
+        </div>
+        {% endif %}
+        <div class="session-breakdown">
+          <h2 class="session-info__title">{{ session_info["name"] }}</h2>
+          <h3 class="session-info__speaker">
+              {{ session_info["speaker"] }}{% if session_info["speakerRole"] %}, {{ session_info["speakerRole"] }}{% endif %}
+          </h3>
+          <h4 class="session-info__time">
+            Day {{ session_info["day_index"]}},
+            <time title="{{ session_info["datetime"] }}"
+              datetime="{{ session_info["datetime"].strftime('%Y-%m-%dT%H:%M:%S-08:00') }}">{{
+                session_info["datetime"].strftime('%H:%M:%S') | as_24hr
+              }}</time>
+          </h4>
+
+          <div class="session-info__description">
+            {% if session_info["description"] %}
+            <p>{{ session_info["description"] }}</p>
+            {% elif session_info["list"] %}
+            {% for item in session_info["list"] %}
+            <details class="session-info__list-item">
+              <summary class="session-info__list-item-summary">{{ item.title }} </summary>
+              <div class="session-info__list-item-description">
+              {{ item.description | safe }}
+              </div>
+            </details>
+            {% endfor %}
+            {% endif %}
+          </div>
+
+          {% if session_info["notify"] != False and not youtubeId %}
+          <button data-id="{{ session_info["url"] }}" class="notification-btn js-notification-btn" hidden disabled>
+            <div class="notification-btn__inner">Getting status...</div>
+          </button>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+
+  {% else %}
+
+      <div class="session session--pre">
+
+      <div class="session-info__back">
+        <a href="/devsummit/schedule" class="session-info__back-link">Back to Schedule</a>
+      </div>
+
+      <div class="session-info">
+        Session not found.
+
+      </div>
+
+      </div>
+  {% endif %}
+
+{% endblock %}

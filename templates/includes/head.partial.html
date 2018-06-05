@@ -1,0 +1,54 @@
+<!--
+Copyright 2016 Google Inc. All rights reserved.
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+    http://www.apache.org/licenses/LICENSE-2.0
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+{% macro head(is_partial=none, styles_path=none, section=none, inline_styles=false, is_live=false, base_url, url) %}
+  <!doctype html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0">
+    <title>Chrome Dev Summit 2016</title>
+    {% include "templates/includes/social-meta.partial.html" %}
+    <meta name="google-site-verification" content="2t7BXVcozNSY_vFaI0ixPXOXe256q_quG-xirNGOA-Q">
+    <meta name="theme-color" content="#6387F5">
+    <link rel="icon" href="/devsummit/static/images/icons/chrome-icon@192.png">
+    <link rel="manifest" href="{{ "/devsummit/static/manifest.json" | add_hash }}">
+    <link rel="preload" href="{{ '/devsummit/static/scripts/bootstrap.js' | add_hash }}" as="script">
+
+    {% if inline_styles %}
+    <style>
+      {% include "static/styles/inline.css" %}
+    </style>
+    <noscript>
+      <link rel="stylesheet" href="{{ "/devsummit/static/styles/cds.css" | add_hash }}">
+    </noscript>
+    {% else %}
+      <link rel="stylesheet" href="{{ "/devsummit/static/styles/cds.css" | add_hash }}">
+    {% endif %}
+
+    {% if styles_path %}
+
+    <!-- Styles that are unique to this page -->
+    <style id="styles-{{ section | convert_to_class }}">
+      {% include styles_path %}
+    </style>
+    {% endif %}
+  </head>
+  <body>
+    <script>
+      if (('PushManager' in window) && Notification.permission !== 'denied') {
+        document.body.classList.add('push-enabled');
+      }
+    </script>
+
+  {% include "templates/includes/header.partial.html" %}
+    {{ caller() }}
+{% endmacro %}

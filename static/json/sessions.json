@@ -1,0 +1,309 @@
+{
+  "2016-11-10": {
+    "07:30:00": {
+      "name": "Registration and Breakfast",
+      "random_data": "test123",
+      "description": "Pick up your badge, goodies, and enjoy breakfast. You must have a government-issued photo ID to receive a badge and check in to the event."
+    },
+
+    "10:00:00": {
+      "name": "Keynote",
+      "speaker": "Darin Fisher",
+      "speakerRole": "VP, Chrome Engineering",
+      "speakerImg": "/devsummit/static/images/speakers/darin-fisher.jpg",
+      "url": "/devsummit/schedule/sessions/keynote",
+      "description": "The state of Chrome and the Web Platform today, from the leader of the Chrome team.",
+      "youtubeId": "eI3B6x0fw9s"
+    },
+
+    "10:30:00": {
+      "name": "Building Progressive Web Apps Today",
+      "speaker": "Thao Tran",
+      "speakerRole": "Strategic Partner Development Manager",
+      "speakerImg": "/devsummit/static/images/speakers/thao-tran.jpg",
+      "url": "/devsummit/schedule/sessions/building-progressive-web-apps-today",
+      "description": "Progressive Web Apps are all about improving your user experience. Thao shares some success stories and gives some guidance.",
+      "youtubeId": "U52dD0tegsA"
+    },
+
+    "11:00:00": {
+      "name": "Break"
+    },
+
+    "11:30:00": {
+      "name": "Sign-in on the Web - Credential Management and Best Practices",
+      "speaker": "Sabine Borsay and Eiji Kitamura",
+      "speakerImg": "/devsummit/static/images/speakers/borsay-kitamura.jpg",
+      "url": "/devsummit/schedule/sessions/sign-in-on-the-web",
+      "description": "Sabine and Eiji share best practices for sign-in, and explains how the Credential Management API makes frictionless sign-in possible.",
+      "youtubeId": "NJ-sphu2DqQ"
+    },
+
+    "12:00:00": {
+      "name": "Web Payments",
+      "speaker": "Zach Koch",
+      "speakerRole": "Product Manager, Chrome",
+      "speakerImg": "/devsummit/static/images/speakers/zach-koch.jpg",
+      "url": "/devsummit/schedule/sessions/web-payments",
+      "description": "One of the hardest web user experience challenges is enabling users to make payments. Zach shows us how with the new Web Payment API.",
+      "youtubeId": "U0LkQijSeko"
+    },
+
+    "12:30:00": {
+      "name": "Lunch"
+    },
+
+    "14:00:00": {
+      "name": "Debugging The Web",
+      "speaker": "Paul Irish",
+      "speakerRole": "Performance Engineer, Chrome",
+      "speakerImg": "/devsummit/static/images/speakers/paul-irish.jpg",
+      "url": "/devsummit/schedule/sessions/debugging-the-web",
+      "description": "Learn the state of the art in debugging using Chrome DevTools - all you need to know to expand your toolbox.",
+      "youtubeId": "HF1luRD4Qmk"
+    },
+
+    "14:30:00": {
+      "name": "Polymer, Web Components, and you!",
+      "speaker": "Taylor Savage and Monica Dinculescu",
+      "speakerImg": "/devsummit/static/images/speakers/tsavage-meownica.jpg",
+      "url": "/devsummit/schedule/sessions/web-components-and-polymer",
+      "description": "Come learn about the current state of Polymer, and how you can use Web Components to improve your development.",
+      "youtubeId": "Ihdp63FaRKA"
+    },
+
+    "15:00:00": {
+      "name": "Progressive Performance",
+      "speaker": "Alex Russell",
+      "speakerRole": "Software Engineer, Chrome",
+      "speakerImg": "/devsummit/static/images/speakers/alex-russell.jpg",
+      "url": "/devsummit/schedule/sessions/progressive-performance",
+      "description": "Alex shows us the important things to focus on in performance, and how to run great experiences on slow, inconsistent networks and low-power devices.",
+      "youtubeId": "4bZvq3nodf4"
+    },
+
+    "15:30:00": {
+      "name": "Planning for Performance: PRPL",
+      "speaker": "Sam Saccone",
+      "speakerRole": "Software Engineer",
+      "speakerImg": "/devsummit/static/images/speakers/sam-saccone.jpg",
+      "url": "/devsummit/schedule/sessions/planning-for-performance",
+      "description": "Sam explains how to get the browser to do things under budget - script and resource loading and more.",
+      "youtubeId": "RWLzUnESylc"
+    },
+
+    "16:00:00": {
+      "name": "Break & Supercharged: Live",
+      "speakerImg": "/devsummit/static/images/speakers/surma-paullewis.jpg",
+      "speaker": "Surma and Paul Lewis",
+      "url": "/devsummit/schedule/sessions/supercharged-live",
+      "description": "For those wanting a bit of live-coding, Surma and Paul demonstrate adding a Service Worker to a site during the break. Expect bugs.",
+      "youtubeId": "X8EQSy-ajo4"
+    },
+
+    "16:30:00": {
+      "name": "Real Talk about HTTPS",
+      "speaker": "Emily Stark",
+      "speakerRole": "Software Engineer, Chrome",
+      "speakerImg": "/devsummit/static/images/speakers/estark.jpg",
+      "url": "/devsummit/schedule/sessions/security-http2-leading-to-https",
+      "description": "Emily shows why the default for the web should be secure, and describes Chrome's mission to be honest with our users about HTTPS.",
+      "youtubeId": "iP75a1Y9saY"
+    },
+
+    "17:00:00": {
+      "name": "Predictability for the Web",
+      "speaker": "Rick Byers & Robert Nyman",
+      "speakerRole": "",
+      "speakerImg": "/devsummit/static/images/speakers/rbyers-rnyman.jpg",
+      "url": "/devsummit/schedule/sessions/predictability-for-the-web",
+      "description": "Rick and Robert explain how Chrome is improving predictability for developers, how we responsibly move the web platform forward, and how web developers can help improve the platform.",
+      "youtubeId": "meAl-s77DuA"
+    },
+
+    "17:30:00": {
+      "name": "Chrome Leadership Panel",
+      "speaker": "Chrome Leads",
+      "speakerRole": "",
+      "speakerImg": "/devsummit/static/images/speakers/tbd-cds.jpg",
+      "url": "/devsummit/schedule/sessions/chrome-leadership-panel",
+      "description": "The leaders of the Chrome project answer your questions.",
+      "youtubeId": "BrOCNC-t6Bo"
+    },
+
+    "19:00:00": {
+      "name": "Party!"
+    }
+  },
+
+  "2016-11-11": {
+    "07:30:00": {
+      "name": "Registration and Breakfast",
+      "description": "If you missed registration on Day 1, you can still get your badge and goodies. You must have a government-issued photo ID to receive a badge and check in to the event. Breakfast will also be served."
+    },
+
+    "10:00:00": {
+      "name": "How We Built It",
+      "speaker": "Housing.com and Lyft",
+      "speakerRole": "",
+      "speakerImg": "/devsummit/static/images/speakers/housing-lyft.jpg",
+      "url": "/devsummit/schedule/sessions/how-we-built-it",
+      "description": "Housing.com and Lyft show you their journeys to creating great user experiences.",
+      "youtubeId": "KSWSs9UsNpc"
+    },
+
+    "10:30:00": {
+      "name": "From AMP to PWA - the best of both worlds",
+      "speaker": "Paul Bakaus",
+      "speakerRole": "Developer Advocate",
+      "speakerImg": "/devsummit/static/images/speakers/paul-bakaus.jpg",
+      "url": "/devsummit/schedule/sessions/from-amp-to-pwa",
+      "description": "Paul explains the opportunity in AMP, and how to build great Progressive Web Apps with AMP.",
+      "youtubeId": "M_ZCgbEGyHY"
+    },
+
+    "11:00:00": {
+      "name": "Break"
+    },
+
+    "11:30:00": {
+      "name": "Production PWAs with frameworks",
+      "speaker": "Addy Osmani",
+      "speakerRole": "Developer Programs Engineer",
+      "speakerImg": "/devsummit/static/images/speakers/addy-osmani.jpg",
+      "url": "/devsummit/schedule/sessions/productions-pwas-with-frameworks",
+      "description": "Addy works through building Progressive Web Apps with React at scale. Featuring special guests, Flipkart, dive into the performance and loading patterns needed to make frameworks competitive on mobile.",
+      "youtubeId": "e8XejNt5SZo"
+    },
+
+    "12:00:00": {
+      "name": "May We Help You? Tools and Libraries for Progressive Web Apps",
+      "speaker": "Jeff Posnick",
+      "speakerRole": "Developer Programs Engineer",
+      "speakerImg": "/devsummit/static/images/speakers/jeff-posnick.jpg",
+      "url": "/devsummit/schedule/sessions/tools-and-libraries-for-progressive-web-apps",
+      "description": "Jeff walks through Lighthouse and all the tools and libraries we produce to help web developers easily build great Progressive Web Apps.",
+      "youtubeId": "FZ9BkDiUQJs"
+    },
+
+    "12:30:00": {
+      "name": "Lunch"
+    },
+
+    "14:00:00": {
+      "name": "Client storage: shave seconds off your load time with one simple trick",
+      "speaker": "Dru Knox",
+      "speakerRole": "Product Manager, Chrome",
+      "speakerImg": "/devsummit/static/images/speakers/dru-knox.jpg",
+      "url": "/devsummit/schedule/sessions/the-state-of-storage",
+      "description": "Dru explores the landscape of storage APIs: past, present and future, provides best practices and explains the finer details.",
+      "youtubeId": "gq80Y5-ZJdg"
+    },
+
+    "14:30:00": {
+      "name": "Advanced JS performance with V8 and Web Assembly",
+      "speaker": "Seth Thompson",
+      "speakerRole": "Product Manager, Chrome",
+      "speakerImg": "/devsummit/static/images/speakers/seth-thompson.jpg",
+      "url": "/devsummit/schedule/sessions/advanced-js-performance",
+      "description": "Seth shares the current state of JavaScript and script tooling in V8, and discusses the future with WebAssembly.",
+      "youtubeId": "PvZdTZ1Nl5o"
+    },
+
+    "15:00:00": {
+      "name": "Future App Model: Advanced Service Worker",
+      "speaker": "Jake Archibald",
+      "speakerRole": "Developer Advocate",
+      "speakerImg": "/devsummit/static/images/speakers/jake-archibald.jpg",
+      "url": "/devsummit/schedule/sessions/future-app-model",
+      "description": "Jake (one of the originators of Service Workers) shares the future of the web app model, with Foreign Fetch, Streams and more.",
+      "youtubeId": "J2dOTKBoTL4"
+    },
+
+    "17:30:00": {
+      "name": "What Comes Next for the Web?",
+      "speaker": "Paul Kinlan",
+      "speakerRole": "Developer Advocate",
+      "speakerImg": "/devsummit/static/images/speakers/paul-kinlan.jpg",
+      "url": "/devsummit/schedule/sessions/next-for-the-web",
+      "description": "Paul shares the next visionary steps for the web, with WebVR, Performance and more.",
+      "youtubeId": "YJwrBbze_Ec"
+    },
+
+    "16:00:00": {
+      "notify": false,
+      "name": "Breakouts & Codelabs - Session 1",
+      "url": "/devsummit/schedule/sessions/breakouts-session-1",
+      "list": [
+        {
+          "title": "Firebase",
+          "description": "<p>It's hard to know exactly how to get started building a world-class Progressive Web App. Firebase can help kickstart your PWA and scales with you no matter how big your app grows. Learn how to leverage Firebase to implement an instant-loading, offline-ready, push re-engaging web app in record time.</p>"
+        },
+        {
+          "title": "AMP as starting point",
+          "description": "<p>We see AMP as one of the best starting points into your user journey. That means the first link people click onto is always a super fast loading AMP page. Do you agree? And if not, why not? What stops you from embracing AMP for your strategy, and what would AMP need to change or provide to get there? Discuss!</p>"
+        },
+        {
+          "title": "From zero to service worker.",
+          "description": "<p>A hands-on walkthrough of using service worker libraries to add in offline and instant-loading support to a few classes of web apps:</p><ul><li>Static-only web apps, using just sw-precache.</li><li>Web apps that make API calls, using sw-precache + sw-toolbox.</li><li>Tips for adding in the libraries to different types of build processes (gulp, WebPack, npm scripts).</li>"
+        },
+        {
+          "title": "Media techniques & approaches",
+          "description": "<p>It's simple to add video to your website, but how can you deliver great performance even when connectivity is poor and bandwidth is limited?</p><p>In this session, you’ll learn how to use adaptive streaming to deliver a great video experience across devices and platforms, even on flaky networks or offline:</p><ul><li>Techniques to make the most of the video element.</li><li>Responsive design for media elements.</li><li>Building a plugin-free video player that adapts to bandwidth and device capabilities.</li><li>How to add captions, subtitles and synchronised metadata.</li><li>Recording and streaming from canvas and media elements.</li><li>WebRTC integration.</li><li>Encoding and packaging basics.</li><li>Media delivery testing across devices and different bandwidths.</li>"
+        },
+        {
+          "title": "Web Assembly",
+          "description": "<p>Web Assembly will give you the flexibility to use whatever language you choose to create small, fast web content. We'll be dispelling some myths and answering questions, with plenty of opportunity to discuss the kinds of tools</p>"
+        }
+      ]
+    },
+
+    "16:30:00": {
+      "notify": false,
+      "name": "Breakouts & Codelabs - Session 2",
+      "url": "/devsummit/schedule/sessions/breakouts-session-2",
+      "list": [
+        {
+          "title": "Push Notifications and Background",
+          "description": "<p>Push Notifications have grown to be an important part of the Progressive Web App experience. We'll discuss the most recent learnings, new features and will take a look at new APIs such as the Budget API, Background Sync and Background Fetch.</p>"
+        },
+        {
+          "title": "WebVR",
+          "description": "<p>With the WebVR API you will be able to present your web content onto any VR device, from fancy commercial head-mounted-displays to pieces of cardboard. We'll have a brief introduction to the API followed by a group discussion about what you, as developers, want to get out of it.</p>"
+        },
+        {
+          "title": "Scalable Loading (PRPL, H/2 Push, HTTP/2, route-based chunking)",
+          "description": "<p>Developers want to load their PWAs fast and become interactive as soon as possible. This could be with patterns like PRPL, HTTP/2 Server Push or just serving down less stuff for each route. We want to make sure browsers have a good story here. Let's talk about what challenges folks face shipping fast experiences today, what works and what doesn't and figure out how we can make this better.</p>"
+        },
+        {
+          "title": "Houdini",
+          "description": "<p>Houdini - the real bits. Houdini is the next big thing™ in CSS and will give many new abilities for web developers. A lot is still pure theory, but let’s talk about the parts that have already been implemented in some browsers and can be experimented with.</p>"
+        },
+        {
+          "title": "Web platform predictability pain points",
+          "description": "<p>Talk with Chrome web platform engineers and tell us what's the hardest part about building for the web across different browsers and browser versions. What should we prioritize to make the web more predictable for you?</p>"
+        }
+      ]
+    },
+
+    "15:30:00": {
+      "name": "The “Progressive” in Progressive Web Apps",
+      "speaker": "Patrick Kettner",
+      "speakerRole": "Edge PM, Microsoft",
+      "speakerImg": "/devsummit/static/images/speakers/patrickkettner.jpg",
+      "url": "/devsummit/schedule/sessions/progressive-in-pwa",
+      "description": "",
+      "youtubeId": "ARkPBm6AcNA"
+    },
+
+    "17:00:00": {
+      "name": "Browser Vendor panel",
+      "speaker": "TBD",
+      "speakerRole": "",
+      "speakerImg": "/devsummit/static/images/speakers/tbd-cds.jpg",
+      "url": "/devsummit/schedule/sessions/browser-vendor-panel",
+      "description": "Representatives from various browsers answer your questions.",
+      "youtubeId": "3VV-9_dCYuM"
+    }
+  }
+}
